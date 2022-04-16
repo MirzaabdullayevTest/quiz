@@ -1,13 +1,11 @@
 import React from 'react'
 import classes from './AnswerItem.module.css'
 
-const AnswerItem = ({ text, id, onClick, hasError }) => {
+const AnswerItem = ({ text, id, onClick, state }) => {
     const cls = [classes.AnswerItem]
 
-    if (hasError) {
-        cls.push(classes.Error)
-    } else {
-        cls.push(classes.Success)
+    if (state) { // {[answerId]: 'error' 'success'}
+        cls.push(classes[state])
     }
 
     return (

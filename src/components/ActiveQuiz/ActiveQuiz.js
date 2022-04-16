@@ -8,18 +8,18 @@ const ActiveQuiz = (props) => {
             <p className={classes.Question}>
                 {/* Savollar bo'ladi */}
                 <span>  {/* Savol */}
-                    <strong>3. </strong>
+                    <strong>{props.activeQuestion}. </strong>
                     {props.question}
                 </span>
 
-                <small>1 in 20</small>
+                <small>{props.activeQuestion} in {props.quizLength}</small>
                 {/* Nechta savoldan nechinchisi */}
             </p>
 
             <ActiveQuizList
                 answers={props.answers}
                 onClick={props.onClick}
-                hasError={props.hasError}
+                state={props.state} // null // {'error', 'success'}
             />
 
         </div>

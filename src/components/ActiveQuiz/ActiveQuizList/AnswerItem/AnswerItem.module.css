@@ -12,10 +12,10 @@
     background: rgba(255, 255, 255, .2);
 }
 
-.Error {
+.AnswerItem.error {
     background-color: red;
 }
 
-.Success {
+.AnswerItem.success {
     background-color: green;
 }

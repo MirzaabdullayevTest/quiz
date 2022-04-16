@@ -8,7 +8,7 @@ const ActiveQuizList = (props) => {
 
             {props.answers.map((answer, index) => {
                 return (
-                    <AnswerItem key={index} text={answer.text} id={answer.id} onClick={props.onClick} hasError={props.hasError} />
+                    <AnswerItem key={index} text={answer.text} id={answer.id} onClick={props.onClick} state={props.state ? props.state[answer.id] : null} /> // {[answerId]: 'error' 'success'}
                 )
             })}
 
