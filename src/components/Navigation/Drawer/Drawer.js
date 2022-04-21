@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classes from './Drawer.module.css'
 import { Link } from 'react-router-dom'
+import Popup from '../../UI/Popup/Popup'
 
 const lists = [
     { to: '/auth', text: 'Auth' },
@@ -8,12 +9,11 @@ const lists = [
     { to: '/', text: 'QuizList' },
 ]
 
-
 class Drawer extends Component {
     renderList() {
         return lists.map((list, index) => {
             return <li key={index}>
-                <Link to={list.to}>{list.text}</Link>
+                <Link to={list.to} onClick={this.props.onClose}>{list.text}</Link>
             </li>
         })
     }
@@ -24,13 +24,15 @@ class Drawer extends Component {
             !this.props.isOpen ? classes['close'] : null
         ]
 
-
         return (
-            <nav className={cls.join(' ')}>
-                <ul>
-                    {this.renderList()}
-                </ul>
-            </nav>
+            <React.Fragment>
+                <nav className={cls.join(' ')}>
+                    <ul>
+                        {this.renderList()}
+                    </ul>
+                </nav>
+                {this.props.isOpen ? <Popup onClose={this.props.onClose} /> : null}
+            </React.Fragment>
         )
     }
 }

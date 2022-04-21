@@ -15,10 +15,16 @@ const Layout = (props) => {
         })
     }
 
+    const closeHandler = () => {
+        setIcon({
+            menuOpen: false
+        })
+    }
+
     return (
         <div className={classes.Layout}>
-            <Drawer isOpen={icon.menuOpen}/>
-            <MenuBar isOpen={icon.menuOpen} onToggle={toggleHandler} />
+            <Drawer isOpen={icon.menuOpen} onClose={closeHandler}/>
+            <MenuBar isOpen={icon.menuOpen} onToggle={toggleHandler}  />
             <main>
                 {props.children}
             </main>

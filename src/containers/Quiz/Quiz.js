@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import classes from './Quiz.module.css'
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz'
 import FinishedQuiz from '../../components/ActiveQuiz/FinishedQuiz/FinishedQuiz'
+import withRoutes from '../../hoc/withRoutes/withRoutes'
 
 class Quiz extends Component {
     state = {
@@ -43,8 +44,6 @@ class Quiz extends Component {
                 return
             }
         }
-
-
         const question = this.state.quiz[this.state.activeQuestion]
         const results = this.state.results
 
@@ -85,6 +84,13 @@ class Quiz extends Component {
                 results
             })
         }
+    }
+
+    componentDidMount() {
+        // console.log('Params id:', this.props.params.match.id);
+        // console.log(useParams());
+
+        // console.log('Params id:', this.props.params);
     }
 
     retryHandler = () => {
@@ -128,4 +134,4 @@ class Quiz extends Component {
     }
 }
 
-export default Quiz
+export default withRoutes(Quiz)

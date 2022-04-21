@@ -9,9 +9,25 @@
 
 .QuizList h1 {
     color: #fff;
-    margin-left: 10px;
+    text-align: center;
 }
 
-.QuizWrapper {
-    width: 600px;
+.QuizList ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.QuizList ul li {
+    margin-bottom: 15px;
+}
+
+.QuizList ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.QuizList ul li a:hover {
+    color: #363f54;
 }
