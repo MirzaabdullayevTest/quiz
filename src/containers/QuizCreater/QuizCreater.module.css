@@ -10,8 +10,18 @@
 .QuizCreater h1 {
     color: #fff;
     margin-left: 10px;
+    text-align: center;
 }
 
-.QuizWrapper {
-    width: 600px;
+.QuizCreater>div {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.QuizCreater form {
+    background: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }

@@ -49,7 +49,6 @@ class Quiz extends Component {
 
         if (question.rightAnswerId === answerId) {
             // Demak javob to'g'ri
-
             if (!results[question.id]) {
                 results[question.id] = 'success'
             }
@@ -89,7 +88,6 @@ class Quiz extends Component {
     componentDidMount() {
         // console.log('Params id:', this.props.params.match.id);
         // console.log(useParams());
-
         // console.log('Params id:', this.props.params);
     }
 

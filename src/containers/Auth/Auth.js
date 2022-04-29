@@ -100,8 +100,6 @@ const Auth = () => {
         return isValid
     }
 
-
-
     const renderInputs = () => {
         return Object.keys(form.formControls).map((control, index) => {
             const controlParams = form.formControls[control]  // obj
