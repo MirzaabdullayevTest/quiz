@@ -1,8 +1,8 @@
 import React from 'react'
 import classes from './Input.module.css'
 
-function isValid({ valid, shouldValid, touched }) {
-    return !valid && shouldValid && touched
+function isValid({ valid, shouldValidate, touched }) {
+    return !valid && shouldValidate && touched
 }
 
 const Input = (props) => {
@@ -23,6 +23,7 @@ const Input = (props) => {
                 type={props.type || 'text'}
                 id={htmlFor}
                 onChange={props.onChange}
+                value={props.value}
             />
             {
                 isValid(props)
